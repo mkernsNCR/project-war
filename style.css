@@ -1,12 +1,42 @@
-/** {
-  outline: 1px solid red;
-}*/
-
 header {
   text-align: center;
 }
+
+.background {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("http://3.bp.blogspot.com/-BhHbwTJOuds/ViIUXC_gueI/AAAAAAAACmY/LWaSVXqVATs/s1600/modwatch_banner.jpg");
+  opacity: 0.7;
+  color: white;
+}
+
+.container {
+  height: 100vh;
+  background-image:url("https://addons.opera.com/media/CACHE/images/themes/55/65555/1.0-rev1/images/ad182102-7376-4a38-b375-462a173201b8/85da63db37c0f98e0c46f6713e89e9e4.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+}
+button {
+  background-color:#fff;
+  border-width:1px;
+  border-style:solid;
+  border-bottom-color:#aaa;
+  border-right-color:#aaa;
+  border-top-color:#ddd;
+  border-left-color:#ddd;
+  border-radius:3px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+}
+
 section, footer {
   text-align: center;
+  color: white;
+}
+h1 {
+  padding-top: 50px;
 }
 h2 {
   padding: 25px;
@@ -14,6 +44,10 @@ h2 {
 p {
   padding: 25px;
 }
+#nextCard {
+  color: black;
+}
 .side-by-side {
   display: inline-block;
+  outline: 1px solid white;
 }
