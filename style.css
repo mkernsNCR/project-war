@@ -1,0 +1,19 @@
+/** {
+  outline: 1px solid red;
+}*/
+
+header {
+  text-align: center;
+}
+section {
+  text-align: center;
+}
+h2 {
+  padding: 25px;
+}
+p {
+  padding: 25px;
+}
+.side-by-side {
+  display: inline-block;
+}
