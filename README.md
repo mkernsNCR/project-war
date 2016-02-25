@@ -9,3 +9,5 @@
 
 <h2>If you want to play the game:</h2>
 <a href="http://mkernsncr.github.io/project-war">Click here.</a>
+
+<h3></h3>
