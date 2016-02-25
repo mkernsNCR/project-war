@@ -3,8 +3,60 @@
   <head>
     <title>Project War</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <lind rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="script.js"></script>
   </head>
   <body>
-    <script src="script.js"></script>
+    <div class="container">
+      <!--Title row-->
+      <header class="row">
+
+        <div class="col-md-12">
+          <h1 class="title">WAR!</h1>
+        </div>
+
+      </header>
+      <!--Player row-->
+      <section class="row col-md-12">
+
+        <div class="col-md-6 side-by-side">
+            <h2>Player 1</h2>
+            <p id="playerOneCard" class="side-by-side card"></p>
+        </div>
+        <div class="col-md-6 side-by-side">
+            <h2>Player 2</h2>
+            <p id="playerTwoCard" class="side-by-side"></p>
+        </div>
+
+      </section>
+      <!--Score row-->
+      <section class="row">
+
+        <div id="player1" class="col-md-4 side-by-side">
+          <div class="col-md-12 players">
+            <h3>Cards in deck:</h3>
+            <p id="playerOneScore"></p>
+          </div>
+        </div>
+
+        <div id="message" class="col-md-4 side-by-side">
+          Waiting for first draw...
+        </div>
+
+        <div class="col-md-4 side-by-side">
+          <div class="col-md-12 players">
+            <h3>Cards in deck</h3>
+            <p id="playerTwoScore"></p>
+          </div>
+        </div>
+
+      </section>
+      <!-- Actions row -->
+      <section class="row">
+        <button id="nextCard">Next Card</button>
+      </section>
+
+    </div>
+
   </body>
 </html>
