@@ -1,10 +1,16 @@
+// mms: can these move to just where the deck is built?
 var values = [2, 3, 4, 5, 6 ,7 ,8 , 9, 10, "J", "Q", "K", "A"];
 var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
 // var cardWorth = values.indexOf(cardValue);
 
+// mms: nice breakdown into parmeters and methods of `game`
 var game = {
+  // mms: looks like you started to support more players.
+  //    I didn't see this in your user stories.  :)
+  //   I recommend you start something like this in a new branch.
   //players:[],
   deck:[],
+  // mms: I see multiple pieces of information about a player, should they be grouped into a player1 object?
   playerOneHand:[],
   playerTwoHand: [],
   playerOneCount: 0,
@@ -31,6 +37,7 @@ var game = {
     values.forEach(function (cardValue) {
       var cardWorth = values.indexOf(cardValue);
       suits.forEach(function (cardSuit) {
+        // mms: good job grouping card data and behavior together
         var newCard = {
           value: cardValue,
           suit: cardSuit,
@@ -38,9 +45,11 @@ var game = {
           face: function(){
             return this.value + " " + this.suit;
           }
-        }
+        };
         game.deck.push(newCard);
       });
+      // mms: recommend putting a label in each console.log, so you can find this entry in the log
+      //   `console.log("deck", game.deck)`
       console.log(game.deck);
     });
     game.shuffleDeck();
@@ -56,6 +65,7 @@ var game = {
         return -1;
       }
     });
+    //mms: console.log("shuffled deck", game.deck)
     console.log(game.deck);
     game.distribute();
   },
@@ -81,7 +91,7 @@ var game = {
 
   },
 
-
+  // mms: lots of commented code
 
   // deal: function(){
   //   alert("Dealing...");
@@ -111,13 +121,13 @@ var game = {
   // },
 
   playGame: function () {
-
+    // mms: nice and simply init script
     alert("Welcome to WAR!");
 
     var nextCardButton = document.getElementById("nextCard");
     nextCardButton.addEventListener("click", function(){
       game.playStage();
-    })
+    });
 
     // for(var i = 0; i < 26; i ++){
     this.playStage();
@@ -132,12 +142,12 @@ var game = {
 
     var message = "";
     if(playerFirst.worth > playerSecond.worth) {
-      game.playerOneCount+=2
+      game.playerOneCount+=2;
       message = "Player One wins!";
       // alert('Player One wins! p1 score = ' + game.playerOneCount + ', p2 score = ' + game.playerTwoCount + '');
     }
     if(playerFirst.worth < playerSecond.worth) {
-      game.playerTwoCount+=2
+      game.playerTwoCount+=2;
       message = "Player Two wins!";
       // alert('Player Two wins! p1 score = ' + game.playerOneCount + ', p2 score = ' + game.playerTwoCount + '');
     }
@@ -148,6 +158,7 @@ var game = {
     }
 
     var messageElement = document.getElementById("message");
+    // mms: feeling some duplication here.  Do we need to get this each time we playStage?
     var playerOneCardElement = document.getElementById("playerOneCard");
     var playerTwoCardElement = document.getElementById("playerTwoCard");
     var playerOneScoreElement = document.getElementById("playerOneScore");
@@ -156,13 +167,13 @@ var game = {
     messageElement.innerText = message;
     playerOneCardElement.innerText = playerFirst.face();
     playerTwoCardElement.innerText = playerSecond.face();
-    playerOneScoreElement.innerText = game.playerOneCount
-    playerTwoScoreElement.innerText = game.playerTwoCount
+    playerOneScoreElement.innerText = game.playerOneCount;
+    playerTwoScoreElement.innerText = game.playerTwoCount;
 
   }
-}
+};
 
 window.onload = function() {
   game.buildDeck();
   console.dir(game);
-}
+};
